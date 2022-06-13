@@ -1,6 +1,5 @@
 import { Component } from "react";
 
-
 // import logo from "../../images/coffee_bean_image/coffeeBean.svg"
 import "./header.sass"
 
