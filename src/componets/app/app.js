@@ -1,7 +1,8 @@
 import { Component } from "react";
-import Footer from "../footer/footer";
 
+import Footer from "../footer/footer";
 import HeaderContent from "../header-content/header-content";
+import About from "../about/about";
 
 import "./app.sass"
 
@@ -12,6 +13,7 @@ render() {
     return (
         <div className="app">
             <HeaderContent/>
+            <About/>
             <Footer/>
         </div> 
     )
