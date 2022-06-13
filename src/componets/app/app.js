@@ -31,15 +31,24 @@ class App extends Component{
                 img: Aromi, price: 10, bestseller: false,id: 5},
                 {name: "AROMISTICO Coffee 1 kg", 
                 img: Aromi, price: 10, bestseller: false,id: 6},
-            ]
+            ],
+            toCoffeeShop: null
         }
     }
 
+    onHeaderClick = ( (e) => {
+        this.setState( ({toCoffeeShop}) => ({
+            toCoffeeShop: true
+        }) )
+    })
+
     render() {
-        const {all} = this.state
+        const {all, toCoffeeShop} = this.state
         return (
             <div className="app">
-                <HeaderContent/>
+                <HeaderContent 
+                toCoffeeShop={toCoffeeShop}
+                onHeaderClick={this.onHeaderClick}/>
                 <About/>
                 <Bestsellers all={all} />
                 <Footer/>

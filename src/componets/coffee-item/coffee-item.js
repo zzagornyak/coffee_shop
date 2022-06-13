@@ -10,7 +10,6 @@ class CoffeeItem extends Component{
 
     render() {
         const {img, name, price} = this.props
-        console.log(img)
         return(
             
             <div className="coffee-item">
