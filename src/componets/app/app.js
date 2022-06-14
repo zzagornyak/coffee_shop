@@ -18,38 +18,36 @@ class App extends Component{
         super(props)
         this.state = {
             all: [
-                {name: "Solimo Coffee Beans 2 kg", 
-                img: Solimo, 
-                price: 10, bestseller: true,id: 1},
-                {name: "Presto Coffee Beans 1 kg", 
-                img: Presto, price: 10, bestseller: true,id: 2},
-                {name: "AROMISTICO Coffee 1 kg", 
-                img: Aromi, price: 10, bestseller: true,id: 3},
                 {name: "AROMISTICO Coffee 1 kg", 
                 img: Aromi, price: 10, bestseller: false,id: 4},
                 {name: "AROMISTICO Coffee 1 kg", 
                 img: Aromi, price: 10, bestseller: false,id: 5},
                 {name: "AROMISTICO Coffee 1 kg", 
                 img: Aromi, price: 10, bestseller: false,id: 6},
+                {name: "Solimo Coffee Beans 2 kg", 
+                img: Solimo, 
+                price: 10, bestseller: true,id: 1},
+                {name: "Presto Coffee Beans 1 kg", 
+                img: Presto, price: 10, bestseller: true,id: 2},
+                {name: "AROMISTICO Coffee 1 kg", 
+                img: Aromi, price: 10, bestseller: true,id: 3}
             ],
-            toCoffeeShop: null
+            currentPage: null
         }
     }
 
-    onHeaderClick = ( (e) => {
-        this.setState( ({toCoffeeShop}) => ({
-            toCoffeeShop: true
-        }) )
+    changePage = ( (currentPage) => {
+        this.setState({currentPage})
     })
 
     render() {
-        const {all, toCoffeeShop} = this.state
+        const {all, currentPage} = this.state
         return (
             <div className="app">
                 <HeaderContent 
-                toCoffeeShop={toCoffeeShop}
-                onHeaderClick={this.onHeaderClick}/>
-                <About/>
+                currentPage={currentPage}
+                changePage={this.changePage}/>
+                <About currentPage={currentPage}/>
                 <Bestsellers all={all} />
                 <Footer/>
             </div> 
