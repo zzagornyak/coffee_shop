@@ -10,6 +10,7 @@ import Footer from "../footer/footer";
 import HeaderContent from "../header-content/header-content";
 import About from "../about/about";
 import Bestsellers from "../bestsellers/bestsellers"
+import Filter from "../filter/filter";
 
 import "./app.sass"
 
@@ -44,6 +45,7 @@ class App extends Component{
         const {all, currentPage} = this.state
         return (
             <div className="app">
+                <Filter/>
                 <HeaderContent 
                 currentPage={currentPage}
                 changePage={this.changePage}/>
