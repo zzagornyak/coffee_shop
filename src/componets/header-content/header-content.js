@@ -23,40 +23,23 @@ class HeaderContent extends Component{
                                     Our Coffee
                                 </span>
                             </div>
-                            <div className="hide">
-                                <div className="header-content__tittle-wrapper">
-                                    <h1 className="header-content__tittle">
-                                        Everything You Love About Coffee
-                                    </h1>
-
-                                    <BeanInsert filter/>
-                                    
-                                </div>
-                                <div className="header-content__span-wrapper">
-                                    <span className="header-content__tittle-span">
-                                        We makes every day full of energy and taste
-                                    </span>
-                                    <span className="header-content__tittle-span">
-                                        Want to try our beans?
-                                    </span>
-                                </div>
-                                <div className="header-content__tittle-button">
-                                    <button className="header-content__button-text">More</button>
-                                </div>
-                            </div>
                         </div>
                     )
                 case "forYourPleasure":
-                    return null
+                    return (
+                        <div className="header-content header-content__to-our-coffee">
+                            <Header changePage={changePage}/>
+                            <div className="header-content__tittle header-content__tittle_to-our-coffee">
+                                <span>
+                                    For Your Pleasure
+                                </span>
+                            </div>
+                        </div>
+                    )
                 default:
                     return (
                         <div className="header-content">
                             <Header changePage={changePage}/>
-                            <div className="hide">
-                                <span>
-                                    Our Coffee
-                                </span>
-                            </div>
                             <div className="">
                                 <div className="header-content__tittle-wrapper">
                                     <h1 className="header-content__tittle">

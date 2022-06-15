@@ -4,9 +4,6 @@ import "./coffee-item.sass";
 
 
 class CoffeeItem extends Component{
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         const {img, name, price} = this.props

@@ -6,10 +6,10 @@ import CoffeeItem from "../coffee-item/coffee-item"
 
 
 class Bestsellers extends Component{
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
         
-    }
+    // }
 
     render() {
         const {all} = this.props

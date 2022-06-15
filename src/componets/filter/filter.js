@@ -4,7 +4,19 @@ import { Component } from "react";
 import "./filter.sass"
 
 class Filter extends Component{
-    // <button onClick={(e.currentTarget.getAttribute("data-filter"))=>{onFilterClick()}} 
+    constructor(props) {
+        super(props)
+        this.state = {
+            filterByName: ""
+        }
+    }
+
+    onFilterChange = (e) => {
+        const filterByName = e.target.value
+        this.setState({filterByName})  
+        this.props.onFilterChange(filterByName)  
+    }
+
     render() {
         const {onFilterClick} = this.props
         return (
@@ -14,7 +26,12 @@ class Filter extends Component{
                 <div className="filter__filters-wrapper">
                     <div className="filter__filter-by-name">
                         <span className="filter__tittle">Lookiing for</span>
-                        <input placeholder="start typing here..." type="text" className="filter__input-place" />
+                        <input 
+                            value={this.state.filterByName}
+                            onChange={this.onFilterChange}
+                            placeholder="start typing here..." 
+                            type="text" 
+                            className="filter__input-place" />
                     </div>
                     <div className="filter__filter-by-click">
                         <span className="filter__tittle">Or filter</span>
@@ -22,7 +39,6 @@ class Filter extends Component{
                             <button
                                 data-filter="brazil" 
                                 onClick={(e)=>{
-                                    console.log(e.currentTarget.getAttribute("data-filter"))
                                     onFilterClick(e.currentTarget.getAttribute("data-filter"))
                                 }} 
                                 className="filter__button">
@@ -31,7 +47,6 @@ class Filter extends Component{
                             <button
                                 data-filter="kenya" 
                                 onClick={(e)=>{
-                                    console.log(e.currentTarget.getAttribute("data-filter"))
                                     onFilterClick(e.currentTarget.getAttribute("data-filter"))
                                 }} 
                                 className="filter__button">
@@ -40,7 +55,6 @@ class Filter extends Component{
                             <button
                                 data-filter="columbia" 
                                 onClick={(e)=>{
-                                    console.log(e.currentTarget.getAttribute("data-filter"))
                                     onFilterClick(e.currentTarget.getAttribute("data-filter"))
                                 }} 
                                 className="filter__button">

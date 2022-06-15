@@ -10,7 +10,7 @@ class CoffeeList extends Component{
     
     render() {
 
-        const {visibleData, onFilterClick} = this.props
+        const {visibleData, onFilterClick, onFilterChangePage} = this.props
         const elements = visibleData.map((item) => {
             const {id, ...itemProps} = item
             return (
@@ -22,9 +22,18 @@ class CoffeeList extends Component{
         return(
             <div className="coffee-list">
                 <Filter
+                    onFilterChange={this.props.onFilterChange}
                     onFilterClick={onFilterClick}/>
                 <div className="coffee-list__items-wrapper">
                     {elements}
+                </div>
+                <div className="coffee-list__nav-buttons">
+                    <button value={-6}
+                    onClick={(e) => onFilterChangePage(e.target.value)}
+                    className="coffee-list__button" >Prev</button>
+                    <button value={6}
+                    onClick={(e) => onFilterChangePage(e.target.value)}
+                    className="coffee-list__button" >Next</button>
                 </div>
             </div>
         )

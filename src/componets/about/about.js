@@ -1,6 +1,8 @@
 import { Component } from "react";
 
 import womenWithCoffeePicture from "../../images/our-coffee/womenWithCoffeePicture.png"
+import forYourPleasurePicture from "../../images/for-your-pleasure/forYourPleasureImage.png"
+
 
 import BeanInsert from "../bean-insert/bean-insert";
 
@@ -41,7 +43,29 @@ class About extends Component{
                 )
             case "forYourPleasure":
                 return (
-                    null
+                    <div className="about about_to-our-coffee">
+                        <div className="about__img-wrapper_to-our-coffee">
+                            <img className="about__img_to-our-coffee" src={forYourPleasurePicture} alt="cup of coffee" />
+                        </div>
+                        <div className="about__tittle-wrapper">
+                            <div className="about__tittle">
+                                <span>About our goods</span>
+                            </div>
+                            <BeanInsert/>
+                            <div className="about__text about__text_to-our-coffee">
+                                <p>
+                                    Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+                                </p>
+                                <p>
+                                    As greatly removed calling pleased improve an. Last ask him cold feel
+                                    met spot shy want. 
+                                    Children me laughing we prospect answered followed. At it went
+                                    is song that held help face.
+                                </p>
+                            
+                            </div>
+                        </div>
+                    </div>
                 )
             default:
                 return (
